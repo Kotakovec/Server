@@ -1,1 +1,72 @@
-1
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testovací web</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .test {
+            display: none;
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Testovací web</h1>
+    
+    <button onclick="showTest(1)">Test 1</button>
+    <button onclick="showTest(2)">Test 2</button>
+    <button onclick="alert('Tlačítko bylo stisknuto!')">Speciální tlačítko</button>
+    
+    <div id="test1" class="test">
+        <h2>Test 1</h2>
+        <p>Zde bude obsah prvního testu.</p>
+        <p>Můžete sem přidat otázky, formuláře nebo cokoli jiného.</p>
+    </div>
+    
+    <div id="test2" class="test">
+        <h2>Test 2</h2>
+        <p>Zde bude obsah druhého testu.</p>
+        <p>Toto je jen příklad, můžete obsah libovolně upravit.</p>
+    </div>
+    
+    <script>
+        function showTest(testNumber) {
+            // Skryje všechny testy
+            document.querySelectorAll('.test').forEach(test => {
+                test.classList.remove('active');
+            });
+            
+            // Zobrazí vybraný test
+            document.getElementById('test' + testNumber).classList.add('active');
+        }
+        
+        // Na začátku zobrazíme první test
+        showTest(1);
+    </script>
+</body>
+</html>
